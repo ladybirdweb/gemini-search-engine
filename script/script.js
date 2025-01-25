@@ -91,4 +91,3 @@ async function search() {
 async function asyncSearch() {
     await search();  // Call the search function asynchronously
 }
-
