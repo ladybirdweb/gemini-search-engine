@@ -1,0 +1,194 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f8;  /* Light gray background for a clean, modern look */
+    color: #333;  /* Dark text color for better readability */
+    display: flex;
+    justify-content: center;  /* Allow content to start from the top */
+    align-items: center;
+    min-height: 100vh;  /* Ensure full viewport height */
+    flex-direction: column;
+    overflow-y: auto;  /* Allow scrolling when content overflows */
+    padding: 0 10px;  /* Prevent content from sticking to the edges */
+}
+
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #0067b8;  /* Faveo blue */
+    text-shadow: 0 0 8px rgba(0, 103, 184, 0.2);
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #555;  /* Dark gray text */
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #0067b8;  /* Faveo blue border */
+    background-color: #fff;  /* White background for input */
+    color: #333;  /* Dark text for readability */
+    width: 60%;
+    max-width: 500px;
+    transition: all 0.3s;
+    box-shadow: 0 0 8px rgba(0, 103, 184, 0.1);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #28a745;  /* Green color for focus */
+    box-shadow: 0 0 12px rgba(40, 167, 69, 0.5);  /* Soft green focus */
+}
+
+.search-box button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #0067b8;  /* Faveo blue */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 0 8px rgba(0, 103, 184, 0.3);
+}
+
+.search-box button:hover {
+    background-color: #005288;  /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 103, 184, 0.5);
+}
+
+.results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;  /* White background for results */
+    border-radius: 12px;
+    display: none;
+    max-height: 60vh;
+    overflow-y: auto;
+    box-shadow: 0 0 12px rgba(0, 103, 184, 0.1);
+    text-align: left;
+}
+
+.result-item {
+    background-color: #f8f9fa;  /* Very light gray background for each result */
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 103, 184, 0.05);
+}
+
+.result-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 103, 184, 0.2);
+}
+
+.result-item p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;  /* Dark gray text for results */
+}
+
+.footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #777;  /* Lighter gray for footer */
+}
+
+.footer p {
+    text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .search-box input {
+        width: 80%;
+    }
+
+    .search-box button {
+        width: 80%;
+    }
+}
+/* Global Loader */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0067b8;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Styling for the copy button */
+.copy-btn {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.copy-btn:hover {
+    background-color: #0097a7;
+}
+
+.copy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.6);
+}
+
+/* Styling for the "Copied!" message */
+.copy-message {
+    display: inline;
+    margin-left: 10px;
+    color: #4caf50;
+    font-size: 0.9rem;
+    font-style: italic;
+    transition: opacity 0.5s ease;
+}
+
+.copy-message.hidden {
+    opacity: 0;
+}
+
+
+
